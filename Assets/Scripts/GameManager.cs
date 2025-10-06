@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Player jugador;
+    public GuardTheAhsarah goblin;
+    public Saeed demonio;
     void Start()
     {
         Player Stinger = new Player();
