@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class kit : Item, IConsumible
 {
-    public int lifeRecovered;
+    public int lifeRecovered = 50;
     private void Awake()
     {
         Name = "Botiquin de Campo";
