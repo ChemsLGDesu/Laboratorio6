@@ -11,11 +11,9 @@ public class GameManager : MonoBehaviour
         stinger = gameObject.AddComponent<Player>();
         guardTheAhsarah = gameObject.AddComponent<GuardTheAhsarah>();
         saeed = gameObject.AddComponent<Saeed>();
+        kit kit = new kit();
+        BuffItem buffColmena = new BuffItem();
 
-        Vector3 posicionSpawn = new Vector3(0, 1, 0);
-        Instantiate(kitPrefab, posicionSpawn, Quaternion.identity);
-
-        BuffItem buffItem= new BuffItem();
 
         stinger.MostrarInfo();
         guardTheAhsarah.MostrarInfo();
@@ -25,6 +23,7 @@ public class GameManager : MonoBehaviour
         guardTheAhsarah.Atacar(stinger);
         saeed.Atacar(stinger);
 
-        buffItem.AplicarBuff(stinger);
+        kit.Usar();
+        buffColmena.AplicarBuff(stinger);
     }
 }
