@@ -36,4 +36,13 @@ public class GuardTheAhsarah : EntityBase
         base.Death();
         DropearItem();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player jugador = collision.gameObject.GetComponent<Player>();
+        if (jugador != null)
+        {
+            Atacar(jugador);
+            jugador.Atacar(this);
+        }
+    }
 }

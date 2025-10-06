@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Player : EntityBase, IAtacable, IRecibirDaño
 {
     [SerializeField] private float speed = 5f;
