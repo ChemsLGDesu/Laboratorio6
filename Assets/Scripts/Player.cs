@@ -1,10 +1,7 @@
 using UnityEngine;
 
 public class Player : EntityBase, IAtacable, IRecibirDaño
-{
-    public float speed = 5f;
-    public float attackRange = 2f;
-   
+{   
     private void Awake()
     {
         nameID = "Stinger";
