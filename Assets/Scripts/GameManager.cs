@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Player jugadorManager;
+    [SerializeField] private GuardTheAhsarah guardManager;
+    [SerializeField] private Saeed saeedManager;
+
     void Start()
     {
         Player Stinger = new Player();
