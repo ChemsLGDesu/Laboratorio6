@@ -7,7 +7,7 @@ public class kit : Item, IConsumible
     {
         Name = "Botiquin de Campo";
     }
-    public override void Usar()
+    public override void Usar(Player stinger)
     {
         Consumir();
     }
