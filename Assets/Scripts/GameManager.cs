@@ -2,30 +2,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject playerPrefab;
-    public GameObject guardPrefab;
-    public GameObject saeedPrefab;
-   
-    private Player stinger;
-    private GuardTheAhsarah guardTheAhsarah;
-    private Saeed saeed;
-    private BuffItem buffColmena;
     void Start()
-    {    
-        stinger = GetComponent<Player>();     
-        guardTheAhsarah =GetComponent<GuardTheAhsarah>();
-        saeed = GetComponent<Saeed>();
+    {
+        Player Stinger = new Player();
+        GuardTheAhsarah guard = new GuardTheAhsarah();
+        Saeed saeed = new Saeed();
+        kit botiquin = new kit();
+        BuffItem buffItem = new BuffItem();
 
-        
-
-        stinger.MostrarInfo();
-        guardTheAhsarah.MostrarInfo();
+        Stinger.MostrarInfo();
+        guard.MostrarInfo();
         saeed.MostrarInfo();
 
-        stinger.Atacar(guardTheAhsarah);
-        guardTheAhsarah.Atacar(stinger);
-        saeed.Atacar(stinger);
+        Stinger.Atacar(guard);
+        guard.Atacar(Stinger);
+        saeed.Atacar(Stinger);
 
-        buffColmena.AplicarBuff(stinger);
+        botiquin.Usar();
+        buffItem.AplicarBuff(Stinger);
     }
 }

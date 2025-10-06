@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class Player : EntityBase, IAtacable, IRecibirDaño
 {
+    public float speed = 5f;
+    public float attackRange = 2f;
+    public LayerMask enemyLayer;
+
+    private Rigidbody2D rb;
+    private Vector2 movement;
     private void Awake()
     {
         nameID = "Stinger";
@@ -11,7 +17,7 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
     }
     public override void Atacar(EntityBase objetivo)
     {
-        Debug.Log($"{nameID} le disparo con su Pistola de Colmena a {objetivo.NameID} con presicion!");
+        Debug.Log($"{nameID} dispara con su pistla de colmena a {objetivo.NameID} con presicion!");
         objetivo.RecibirDaño(atack);
     }
 
@@ -32,4 +38,6 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
         base.Death();
         Debug.Log("Stinger ha sido derrotado. Exfiltracion Fallida.");
     }
+
+    
 }
