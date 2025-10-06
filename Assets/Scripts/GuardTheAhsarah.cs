@@ -1,0 +1,39 @@
+﻿using UnityEngine;
+
+public class GuardTheAhsarah : EntityBase
+{
+    private void Awake()
+    {
+        nameID = "Guardian de Ahsarah";
+        life = 100;
+        atack = 15;
+        defense = 5;
+    }
+
+    public override void Atacar(EntityBase objetivo)
+    {
+        Debug.Log($"{nameID} ataca con su cuchillo mariposa");
+        objetivo.RecibirDaño(atack);
+    }
+
+    public override void RecibirDaño(int cantidad)
+    {
+        int dañoFinal = Mathf.Max(0, cantidad - defense);
+        life -= dañoFinal;
+        Debug.Log($"{nameID} recibe {dañoFinal} de daño. Vida restante: {life}");
+
+        if (life <= 0)
+        {
+            Death();
+        }         
+    }
+    public void DropearItem()
+    {
+        Debug.Log($"{nameID} dej� caer una Copa de vino especial de Ahsarah con un valor de 65.000 de tekin!");
+    }
+    public override void Death()
+    {
+        base.Death();
+        DropearItem();
+    }
+}
