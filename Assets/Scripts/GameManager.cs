@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Instanciamos los personajes visibles en escena
         GameObject playerGO = Instantiate(playerPrefab, new Vector3(-2, 0, 0), Quaternion.identity);
         stinger = playerGO.GetComponent<Player>();
 
@@ -23,7 +22,6 @@ public class GameManager : MonoBehaviour
         GameObject saeedGO = Instantiate(saeedPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         saeed = saeedGO.GetComponent<Saeed>();
 
-        // Spawneamos el kit
         Vector3 kitSpawn = new Vector3(0, 1, 0);
         GameObject go = Instantiate(kitPrefab, kitSpawn, Quaternion.identity);
 
