@@ -1,13 +1,26 @@
 using UnityEngine;
 
 public class Player : EntityBase, IAtacable, IRecibirDaño
-{   
+{
+    [SerializeField] private float speed = 5f;
+    private Rigidbody2D rb;
+    private Vector2 moveInput;
     private void Awake()
     {
         nameID = "Stinger";
         life = 150;
         atack = 25;
         defense = 8;
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical");
+    }
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveInput * speed * Time.fixedDeltaTime);
     }
     public override void Atacar(EntityBase objetivo)
     {
@@ -33,5 +46,16 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
         Debug.Log("Stinger ha sido derrotado. Exfiltracion Fallida.");
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        EnemigoEntity enemigo = collision.gameObject.GetComponent<EnemigoEntity>();
+        if (enemigo != null)
+        {
+            Atacar(enemigo);
+            enemigo.Atacar(this);
+        }
+    }
 }
+
+    
+
