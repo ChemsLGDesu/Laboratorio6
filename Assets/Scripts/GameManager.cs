@@ -5,27 +5,18 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject guardPrefab;
     public GameObject saeedPrefab;
-    public GameObject kitPrefab;
-
+   
     private Player stinger;
     private GuardTheAhsarah guardTheAhsarah;
     private Saeed saeed;
-
+    private BuffItem buffColmena;
     void Start()
-    {
-        GameObject playerGO = Instantiate(playerPrefab, new Vector3(-2, 0, 0), Quaternion.identity);
-        stinger = playerGO.GetComponent<Player>();
+    {    
+        stinger = GetComponent<Player>();     
+        guardTheAhsarah =GetComponent<GuardTheAhsarah>();
+        saeed = GetComponent<Saeed>();
 
-        GameObject guardGO = Instantiate(guardPrefab, new Vector3(2, 0, 0), Quaternion.identity);
-        guardTheAhsarah = guardGO.GetComponent<GuardTheAhsarah>();
-
-        GameObject saeedGO = Instantiate(saeedPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        saeed = saeedGO.GetComponent<Saeed>();
-
-        Vector3 kitSpawn = new Vector3(0, 1, 0);
-        GameObject go = Instantiate(kitPrefab, kitSpawn, Quaternion.identity);
-
-        BuffItem buffColmena = new BuffItem();
+        
 
         stinger.MostrarInfo();
         guardTheAhsarah.MostrarInfo();

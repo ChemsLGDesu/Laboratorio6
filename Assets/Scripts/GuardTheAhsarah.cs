@@ -29,7 +29,7 @@ public class GuardTheAhsarah : EntityBase
     }
     public void DropearItem()
     {
-        Debug.Log($"{nameID} dej� caer una Copa de vino especial de Ahsarah con un valor de 65.000 de tekin!");
+        Debug.Log($"{nameID} dejo caer una Copa de vino especial de Ahsarah con un valor de 65.000 de tekin!");
     }
     public override void Death()
     {
