@@ -2,26 +2,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Player jugador;
-    public GuardTheAhsarah goblin;
-    public Saeed demonio;
+    public Player stinger;
+    public GuardTheAhsarah guardTheAhsarah;
+    public Saeed saeed;
     void Start()
     {
-        Player Stinger = new Player();
-        GuardTheAhsarah guardTheAhsarah = new GuardTheAhsarah();
-        Saeed saeed = new Saeed();
-        kit kit = new kit();
-        BuffItem buffItem = new BuffItem();
+        stinger = gameObject.AddComponent<Player>();
+        guardTheAhsarah = gameObject.AddComponent<GuardTheAhsarah>();
+        saeed = gameObject.AddComponent<Saeed>();
 
-        Stinger.MostrarInfo();
+        kit kit = new kit();
+        BuffItem buffItem= new BuffItem();
+
+        stinger.MostrarInfo();
         guardTheAhsarah.MostrarInfo();
         saeed.MostrarInfo();
 
-        Stinger.Atacar(guardTheAhsarah);
-        guardTheAhsarah.Atacar(Stinger);
-        saeed.Atacar(Stinger);
+        stinger.Atacar(guardTheAhsarah);
+        guardTheAhsarah.Atacar(stinger);
+        saeed.Atacar(stinger);
 
         kit.Usar();
-        buffItem.AplicarBuff(Stinger);
+        buffItem.AplicarBuff(stinger);
     }
 }
