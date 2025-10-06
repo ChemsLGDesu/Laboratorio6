@@ -4,10 +4,7 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
 {
     public float speed = 5f;
     public float attackRange = 2f;
-    public LayerMask enemyLayer;
-
-    private Rigidbody2D rb;
-    private Vector2 movement;
+   
     private void Awake()
     {
         nameID = "Stinger";
