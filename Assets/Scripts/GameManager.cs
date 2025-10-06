@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
+        Player Stinger = new Player();
+        GuardTheAhsarah guardTheAhsarah = new GuardTheAhsarah();
+        Saeed saeed = new Saeed();
+        kit kit = new kit();
+        BuffItem buffItem = new BuffItem();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Stinger.MostrarInfo();
+        guardTheAhsarah.MostrarInfo();
+        saeed.MostrarInfo();
+
+        Stinger.Atacar(guardTheAhsarah);
+        guardTheAhsarah.Atacar(Stinger);
+        saeed.Atacar(Stinger);
+
+        kit.Usar();
+        buffItem.AplicarBuff(Stinger);
     }
 }

@@ -1,15 +1,21 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BuffItem : Item, IAplicarBuff
 {
     public int increaseAttack = 10;
-    public void AplicarBuff(EntityBase objetivo)
+    private void Awake()
     {
-        
+        Name = "Buff Colmena";
     }
 
     public override void Usar()
     {
-       
+        Debug.Log($"{Name} aumento el daño de su Psitola de Colmena ");
+    }
+
+    public void AplicarBuff(EntityBase objetivo)
+    {
+        objetivo.GetType().GetProperty("ataque")?.SetValue(objetivo, objetivo.Atack + increaseAttack);
+        Debug.Log($"{objetivo.NameID} recibe un buff de +{increaseAttack} ataque!");
     }
 }

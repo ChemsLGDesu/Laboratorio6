@@ -11,7 +11,7 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
     }
     public override void Atacar(EntityBase objetivo)
     {
-        Debug.Log($"{nameID} le disparo con su pistola de colmena a {objetivo.NameID} con presicion!");
+        Debug.Log($"{nameID} le disparo con su Pistola de Colmena a {objetivo.NameID} con presicion!");
         objetivo.RecibirDaño(atack);
     }
 
@@ -26,7 +26,7 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
             Death();
         }
     }
-
+    
     public override void Death()
     {
         base.Death();
