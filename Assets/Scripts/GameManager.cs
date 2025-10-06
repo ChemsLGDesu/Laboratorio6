@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
         guardTheAhsarah.Atacar(stinger);
         saeed.Atacar(stinger);
 
-        kit.Usar();
         buffItem.AplicarBuff(stinger);
     }
 }
