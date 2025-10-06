@@ -7,7 +7,7 @@ public class kit : Item, IConsumible
     {
         Name = "Botiquin de Campo";
     }
-    public override void Usar(Player stinger)
+    public override void Usar()
     {
         Consumir();
     }
@@ -15,6 +15,4 @@ public class kit : Item, IConsumible
     {
         Debug.Log($"Usaste el {Name} y recuperaste {lifeRecovered} puntos de vida");
     }
-
-    
 }
