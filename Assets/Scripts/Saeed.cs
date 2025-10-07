@@ -10,12 +10,9 @@ public class Saeed : EnemigoEntity, IAtacable, IRecibirDaño
         defense = 10;
     }
     public override void Atacar(EntityBase objetivo)
-    {
-        if (objetivo == true)
-        {
+    {          
             Debug.Log($"{nameID} Dispara con su Ametralladora Ligera M249 {objetivo.NameID}");
-            objetivo.RecibirDaño(atack);
-        }
+        objetivo.RecibirDaño(atack);      
     }
     public override void RecibirDaño(int cantidad)
     {
