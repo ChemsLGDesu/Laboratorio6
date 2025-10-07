@@ -10,12 +10,15 @@ public class BuffItem : Item, IAplicarBuff
 
     public override void Usar()
     {
-        Debug.Log($"{Name} aumento el daño de su Psitola de Colmena ");
+        Debug.Log($"{Name} aumento el daño de su Pistola de Colmena ");
     }
 
     public void AplicarBuff(EntityBase objetivo)
     {
-        objetivo.GetType().GetProperty("ataque")?.SetValue(objetivo, objetivo.Atack + increaseAttack);
-        Debug.Log($"{objetivo.NameID} recibe un buff de +{increaseAttack} ataque!");
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            objetivo.GetType().GetProperty("ataque")?.SetValue(objetivo, objetivo.Atack + increaseAttack);
+            Debug.Log($"{objetivo.NameID} recibe un buff de +{increaseAttack} ataque!");
+        }
     }
 }
