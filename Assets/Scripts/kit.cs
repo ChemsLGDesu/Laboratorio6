@@ -7,12 +7,21 @@ public class kit : Item, IConsumible
     {
         Name = "Botiquin de Campo";
     }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            lifeRecovered++;
+            Usar();
+        }
+            
+    }
     public override void Usar()
     {
         Consumir();
     }
     public void Consumir()
-    {
-        Debug.Log($"Usaste el {Name} y recuperaste {lifeRecovered} puntos de vida");
+    { 
+        Debug.Log($"Usaste el {Name} y recuperaste {lifeRecovered} puntos de vida");  
     }
 }
