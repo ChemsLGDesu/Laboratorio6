@@ -21,6 +21,5 @@ public class kit : Item, IConsumible
     public void Consumir()
     {      
         Debug.Log($"Usaste el {Name} y recuperaste {lifeRecovered} puntos de vida");
-        lifeRecovered++;
     }
 }
