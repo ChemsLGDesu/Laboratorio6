@@ -9,12 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BuffItem buffDamage;
     void Start()
     {
-        Stinger = new GameObject("Player").AddComponent<Player>();
-        guard = new GameObject("Goblin").AddComponent<GuardTheAhsarah>();
-        saeed = new GameObject("Demonio").AddComponent<Saeed>();
-        botiquin = new GameObject("Pocion").AddComponent<kit>();
-        buffDamage = new GameObject("BuffItem").AddComponent<BuffItem>();
-
         Stinger.Atacar(guard);
         guard.Atacar(Stinger);
         saeed.Atacar(Stinger);
