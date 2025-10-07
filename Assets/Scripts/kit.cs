@@ -10,9 +10,9 @@ public class kit : Item, IConsumible
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
-        {
-            lifeRecovered++;
+        {          
             Usar();
+            lifeRecovered++;
         }
             
     }

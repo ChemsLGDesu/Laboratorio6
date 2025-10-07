@@ -7,7 +7,6 @@ public class BuffItem : Item, IAplicarBuff
     {
         Name = "Buff Colmena";
     }
-
     public override void Usar()
     {
         Debug.Log($"{Name} aumento el daño de su Pistola de Colmena ");
