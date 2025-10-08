@@ -29,8 +29,11 @@ public abstract class EntityBase : MonoBehaviour
 
     public virtual void Death()
     {
-        Debug.Log($"{nameID} ha sido derrotado ");
+        estaMuerto = true;
+        Debug.Log($"{name} ha muerto.");
+        Destroy(gameObject);
     }
+    
     public virtual void MostrarInfo()
     {
         Debug.Log($"[{nameID}] Vida: {life}, Ataque: {atack}, Defensa: {defense}");
