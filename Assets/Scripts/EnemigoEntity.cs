@@ -51,7 +51,7 @@ public abstract class EnemigoEntity : EntityBase, IDropearItem
         }
     }
 
-    public override void RecibirDaño(float cantidad)
+    public override void RecibirDaño(int cantidad)
     {
         life -= cantidad;
         if (life <= 0)
@@ -61,4 +61,4 @@ public abstract class EnemigoEntity : EntityBase, IDropearItem
         }
     }
 }
-}
+
