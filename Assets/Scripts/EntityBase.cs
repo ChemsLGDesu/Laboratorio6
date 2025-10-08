@@ -3,12 +3,24 @@
 public abstract class EntityBase : MonoBehaviour
 {
     [SerializeField] protected string nameID;
-    [SerializeField] protected int life;
+    [SerializeField] protected float life = 100f;
     [SerializeField] protected int atack;
     [SerializeField] protected int defense;
-
+    public float Vida
+    {
+        get => life;
+        set
+        {
+            life = Mathf.Max(0, value); 
+            if (life == 0 && !estaMuerto)
+            {
+                Death();
+            }
+        }
+    }
+    protected bool estaMuerto = false;
     public string NameID => nameID;
-    public int Life { get => life; protected set => life = value; }
+    public float Life { get => life; protected set => life = value; }
     public int Atack => atack;
     public int Defense => defense;
 
