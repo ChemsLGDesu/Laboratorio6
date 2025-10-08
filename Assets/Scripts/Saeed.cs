@@ -9,6 +9,15 @@ public class Saeed : EnemigoEntity, IAtacable, IRecibirDaño
         atack = 30;
         defense = 10;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player jugador = collision.gameObject.GetComponent<Player>();
+        if (jugador != null)
+        {
+            Atacar(jugador);
+            jugador.Atacar(this);
+        }
+    }
     public override void Atacar(EntityBase objetivo)
     {          
             Debug.Log($"{nameID} Dispara con su Ametralladora Ligera M249 {objetivo.NameID}");
@@ -34,13 +43,5 @@ public class Saeed : EnemigoEntity, IAtacable, IRecibirDaño
         base.Death();
         DropearItem();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Player jugador = collision.gameObject.GetComponent<Player>();
-        if (jugador != null)
-        {
-            Atacar(jugador);
-            jugador.Atacar(this);
-        }
-    }
+    
 }
