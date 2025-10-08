@@ -19,7 +19,8 @@ public class kit : Item, IConsumible
         Consumir();
     }
     public void Consumir()
-    {      
+    {
+        int vidaActual = Mathf.Max(0,lifeRecovered);
         Debug.Log($"Usaste el {Name} y recuperaste {lifeRecovered} puntos de vida");
     }
 }

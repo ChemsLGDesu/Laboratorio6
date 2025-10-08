@@ -20,7 +20,7 @@ public class Saeed : EnemigoEntity, IAtacable, IRecibirDaño
         }
     }
     public override void Atacar(EntityBase objetivo)
-    {          
+    {
         Debug.Log($"{nameID} Dispara con su Ametralladora Ligera M249 {objetivo.NameID}");
         objetivo.RecibirDaño(atack);      
     }
