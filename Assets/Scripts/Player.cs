@@ -13,6 +13,15 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
         defense = 8;
         rb = GetComponent<Rigidbody2D>();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        EnemigoEntity enemigo = collision.gameObject.GetComponent<EnemigoEntity>();
+        if (enemigo != null)
+        {
+            Atacar(enemigo);
+            enemigo.Atacar(this);
+        }
+    }
     private void Update()
     {
         moveInput.x = Input.GetAxis("Horizontal");
@@ -44,16 +53,6 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
     {
         base.Death();
         Debug.Log("Stinger ha sido derrotado. Exfiltracion Fallida.");
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        EnemigoEntity enemigo = collision.gameObject.GetComponent<EnemigoEntity>();
-        if (enemigo != null)
-        {
-            Atacar(enemigo);
-            enemigo.Atacar(this);
-        }
     }
 }
 
