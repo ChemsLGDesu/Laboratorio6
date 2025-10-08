@@ -16,4 +16,9 @@ public class GameManager : MonoBehaviour
         botiquin.Usar();
         buffDamage.AplicarBuff(Stinger);
     }
+
+    void Update()
+    {
+        
+    }
 }

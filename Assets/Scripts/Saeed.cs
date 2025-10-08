@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Saeed : EnemigoEntity, IAtacable, IRecibirDaño
@@ -20,7 +21,7 @@ public class Saeed : EnemigoEntity, IAtacable, IRecibirDaño
     }
     public override void Atacar(EntityBase objetivo)
     {          
-            Debug.Log($"{nameID} Dispara con su Ametralladora Ligera M249 {objetivo.NameID}");
+        Debug.Log($"{nameID} Dispara con su Ametralladora Ligera M249 {objetivo.NameID}");
         objetivo.RecibirDaño(atack);      
     }
     public override void RecibirDaño(int cantidad)
