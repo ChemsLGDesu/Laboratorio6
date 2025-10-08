@@ -44,7 +44,7 @@ public abstract class EnemigoEntity : EntityBase, IDropearItem
         if (player != null)
         {
             player.RecibirDaño(atack);
-            RecibirDaño(player.Atack); // el jugador también lo golpea
+            RecibirDaño(player.Atack); 
             Debug.Log($"{name} y el Player se golpearon!");
 
             lastAttackTime = Time.time;

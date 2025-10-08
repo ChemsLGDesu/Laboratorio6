@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GuardTheAhsarah : EntityBase
+public class GuardTheAhsarah : EnemigoEntity, IAtacable,IRecibirDaño
 {
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class GuardTheAhsarah : EntityBase
             Death();
         }         
     }
-    public void DropearItem()
+    public override void DropearItem()
     {
         Debug.Log($"{nameID} dejo caer una Copa de vino especial de Ahsarah con un valor de 65.000 de tekin!");
     }
