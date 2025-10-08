@@ -9,7 +9,15 @@ public class GuardTheAhsarah : EntityBase
         atack = 15;
         defense = 5;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player jugador = collision.gameObject.GetComponent<Player>();
+        if (jugador != null)
+        {
+            Atacar(jugador);
+            jugador.Atacar(this);
+        }
+    }
     public override void Atacar(EntityBase objetivo)
     {
         Debug.Log($"{nameID} ataca con su cuchillo mariposa");
@@ -35,14 +43,5 @@ public class GuardTheAhsarah : EntityBase
     {
         base.Death();
         DropearItem();
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Player jugador = collision.gameObject.GetComponent<Player>();
-        if (jugador != null)
-        {
-            Atacar(jugador);
-            jugador.Atacar(this);
-        }
     }
 }
