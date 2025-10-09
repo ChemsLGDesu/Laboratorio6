@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class kit : Item, IConsumible
 {
+    [SerializeField] private Player player;
     public int lifeRecovered = 50;
-    private Player player; 
 
     private void Awake()
     {
