@@ -6,7 +6,7 @@ public abstract class EntityBase : MonoBehaviour
     [SerializeField] protected float life = 100f;
     [SerializeField] protected int atack;
     [SerializeField] protected int defense;
-    [SerializeField] protected float vidaMaxima = 100f;
+    [SerializeField] protected float vidaMaxima = 150f;
 
     public float Vida
     {
