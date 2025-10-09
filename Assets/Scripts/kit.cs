@@ -3,12 +3,12 @@ using UnityEngine;
 public class kit : Item, IConsumible
 {
     public int lifeRecovered = 50;
-    private Player player; // referencia al jugador
+    private Player player; 
 
     private void Awake()
     {
         Name = "Botiquin de Campo";
-        player = FindObjectOfType<Player>(); // busca al Player en la escena
+        player = FindObjectOfType<Player>(); 
     }
 
     void Update()
@@ -28,12 +28,12 @@ public class kit : Item, IConsumible
     {
         if (player != null)
         {
-            player.Vida += lifeRecovered; // aumenta la vida
+            player.Vida += lifeRecovered;
             Debug.Log($"Usaste el {Name} y recuperaste {lifeRecovered} puntos de vida. Vida actual: {player.Vida}");
         }
         else
         {
-            Debug.LogWarning("No se encontró al jugador para curar.");
+            Debug.Log("No se encontró al jugador para curar.");
         }
     }
 }

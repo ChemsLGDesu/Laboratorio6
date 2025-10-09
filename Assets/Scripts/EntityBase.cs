@@ -6,12 +6,14 @@ public abstract class EntityBase : MonoBehaviour
     [SerializeField] protected float life = 100f;
     [SerializeField] protected int atack;
     [SerializeField] protected int defense;
+    [SerializeField] protected float vidaMaxima = 100f;
+
     public float Vida
     {
         get => life;
         set
         {
-            life = Mathf.Max(0, value); 
+            life = Mathf.Clamp(value, 0, vidaMaxima);
             if (life == 0 && !estaMuerto)
             {
                 Death();

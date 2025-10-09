@@ -5,6 +5,7 @@ public class Player : EntityBase, IAtacable, IRecibirDaño
     [SerializeField] private float speed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
     private void Awake()
     {
         nameID = "Stinger";
