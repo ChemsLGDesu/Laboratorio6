@@ -8,7 +8,7 @@ public class kit : Item, IConsumible
     private void Awake()
     {
         Name = "Botiquin de Campo";
-        player = FindObjectOfType<Player>(); 
+        player = FindFirstObjectByType<Player>(); ; 
     }
 
     void Update()
